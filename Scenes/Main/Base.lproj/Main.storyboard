@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="68w-6W-DtF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="githubSeanAllen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="githubMainImage" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-J0-fb8">
+                                <rect key="frame" x="40" y="128" width="280" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="6df-ws-Pf8"/>
+                                    <constraint firstAttribute="height" constant="240" id="KWz-1d-Vqc"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEl-iO-i4C">
+                                <rect key="frame" x="30" y="398" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu9-e8-ZXt" customClass="GreenButton" customModule="githubSeanAllen" customModuleProvider="target">
+                                <rect key="frame" x="30" y="743" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GqY-tF-OTS"/>
+                                </constraints>
+                                <state key="normal" title="Get Followers">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="getFollowers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tpu-TP-AGJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cu9-e8-ZXt" secondAttribute="trailing" constant="30" id="DyF-h9-X7M"/>
+                            <constraint firstItem="5gs-J0-fb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="GQR-JH-ckl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BEl-iO-i4C" secondAttribute="trailing" constant="30" id="RZX-32-FKh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cu9-e8-ZXt" secondAttribute="bottom" constant="20" id="SFa-2v-VPJ"/>
+                            <constraint firstItem="BEl-iO-i4C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Sc3-dM-hWN"/>
+                            <constraint firstItem="cu9-e8-ZXt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="U3c-eN-y6t"/>
+                            <constraint firstItem="5gs-J0-fb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hds-Go-LYU"/>
+                            <constraint firstItem="BEl-iO-i4C" firstAttribute="top" secondItem="5gs-J0-fb8" secondAttribute="bottom" constant="30" id="mHh-sK-byd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gHV-iS-gkX"/>
+                    <connections>
+                        <outlet property="getFollowersButton" destination="cu9-e8-ZXt" id="pH2-5C-MPl"/>
+                        <outlet property="usernameTextField" destination="BEl-iO-i4C" id="vr8-j9-bT7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="133.92857142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GVt-pp-W2x">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="68w-6W-DtF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LII-2i-Rsn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ujr-Ch-fOx" kind="relationship" relationship="viewControllers" id="88g-oN-8hx"/>
+                        <segue destination="P7T-Ae-KnD" kind="relationship" relationship="viewControllers" id="kxj-F9-4Gw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaC-0I-w5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--favorites-->
+        <scene sceneID="JMK-U7-b66">
+            <objects>
+                <viewController id="P7T-Ae-KnD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wz7-ss-g5x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xpB-aX-F2n"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="favorites" image="star" catalog="system" selectedImage="star" id="I3I-aq-qx5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIz-53-u0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558" y="837"/>
+        </scene>
+        <!--search-->
+        <scene sceneID="Mz0-sz-9CM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ujr-Ch-fOx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="iRg-6M-qHB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4qD-7S-uhD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xCh-ub-kEx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTi-8k-HLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="githubMainImage" width="300" height="168"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="star" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
