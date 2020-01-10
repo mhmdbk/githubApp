@@ -29,6 +29,11 @@ class FollowerDetailsViewController: UIViewController {
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.showSpinner(onView: self.view)
+    }
        func getUser() {
             APIClient.shared.getUser(userName:userName) { (result) in
                 switch result {
@@ -43,8 +48,8 @@ class FollowerDetailsViewController: UIViewController {
                         self.gistsLabel.text = "\(String(describing: self.user.publicGists!))"
                         self.followersLabel.text = "\(String(describing: self.user.followers!))"
                         self.followingLabel.text = "\(String(describing: self.user.following!))"
-                        self.createdAtLabel.text = self.user.createdAt
-                        
+                        self.createdAtLabel.text = "account created at: \(String(describing: self.user.createdAt!))"
+                        self.removeSpinner()
                     } catch {}
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -52,10 +57,19 @@ class FollowerDetailsViewController: UIViewController {
             }
         }
     
+ 
     @IBAction func githubProfileButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Profile", message: "\(String(describing: user.url!))", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func getFollowersButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Followers", bundle: nil)
+        let VC = storyBoard.instantiateViewController(identifier:"FollowersViewController" ) as! FollowersViewController
+        VC.userName = user.login!
+        navigationController?.pushViewController(VC, animated: true)
+       
     }
     
     @objc func addTapped(sender: UIBarButtonItem) {

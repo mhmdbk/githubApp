@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		500A099923C753E0009282BD /* FollowerDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500A099823C753E0009282BD /* FollowerDetails.storyboard */; };
 		500A099B23C756AD009282BD /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A099A23C756AD009282BD /* PurpleButton.swift */; };
+		500A099D23C8D45A009282BD /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A099C23C8D45A009282BD /* SpinnerViewController.swift */; };
+		500A09A123C8DC0B009282BD /* extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A09A023C8DC0B009282BD /* extension + UIViewController.swift */; };
 		500EF53623C639AF003D48CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EF53523C639AF003D48CF /* User.swift */; };
 		500EF53823C650BF003D48CF /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EF53723C650BF003D48CF /* Followers.swift */; };
 		50C5DD0723C3F2B100B5FC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD0623C3F2B100B5FC23 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 		4ACEF6A7D2E4A8A1C7D27044 /* Pods-githubSeanAllen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSeanAllen.release.xcconfig"; path = "Target Support Files/Pods-githubSeanAllen/Pods-githubSeanAllen.release.xcconfig"; sourceTree = "<group>"; };
 		500A099823C753E0009282BD /* FollowerDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowerDetails.storyboard; sourceTree = "<group>"; };
 		500A099A23C756AD009282BD /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		500A099C23C8D45A009282BD /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		500A09A023C8DC0B009282BD /* extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + UIViewController.swift"; sourceTree = "<group>"; };
 		500EF53523C639AF003D48CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		500EF53723C650BF003D48CF /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		50C5DD0323C3F2B100B5FC23 /* githubSeanAllen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubSeanAllen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,7 @@
 		50C5DD1C23C4A13E00B5FC23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				500A09A023C8DC0B009282BD /* extension + UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				50C5DD2123C4A57200B5FC23 /* GreenButton.swift */,
 				500A099A23C756AD009282BD /* PurpleButton.swift */,
+				500A099C23C8D45A009282BD /* SpinnerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,9 +355,11 @@
 				50C5DD2923C4C72300B5FC23 /* FollowersCollectionViewCell.swift in Sources */,
 				500EF53823C650BF003D48CF /* Followers.swift in Sources */,
 				50C5DD3223C4E64D00B5FC23 /* FollowerDetailsViewController.swift in Sources */,
+				500A09A123C8DC0B009282BD /* extension + UIViewController.swift in Sources */,
 				500EF53623C639AF003D48CF /* User.swift in Sources */,
 				50C5DD0723C3F2B100B5FC23 /* AppDelegate.swift in Sources */,
 				50C5DD0923C3F2B100B5FC23 /* SceneDelegate.swift in Sources */,
+				500A099D23C8D45A009282BD /* SpinnerViewController.swift in Sources */,
 				50C5DD4123C4F21000B5FC23 /* AppNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
