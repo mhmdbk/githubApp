@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FollowersCollectionViewCell: UICollectionViewCell {
 
@@ -16,5 +17,13 @@ class FollowersCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
      }
+    
+    func configure(withFollowers follower: Followers) {
+        if let urlString = follower.avatarUrl, let url = URL(string: urlString) {
+            followersImageView.sd_setImage(with: url, completed: nil)
+        }
+        followerName.text = follower.login
+
+    }
 
 }

@@ -22,7 +22,7 @@ class PurpleButton: UIButton {
     }
     
     func configureButton(){
-        backgroundColor = UIColor.init(red: 238/255, green: 130/255, blue: 238/255, alpha: 0.8)
+        backgroundColor = UIColor.init(red: 106/255, green: 13/255, blue: 173/255, alpha: 0.9)
         layer.cornerRadius = 8.0
         setTitleColor(.white , for: .normal)
         UIFont.boldSystemFont(ofSize: 18.0)

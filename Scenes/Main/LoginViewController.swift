@@ -9,29 +9,25 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var getFollowersButton: UIButton!
     var user : User!
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-      }
+      
+        
+    }
+   
     
     @IBAction func getFollowers(_ sender: Any) {
-        APIClient.shared.getUser { (result) in
-            switch result {
-            case .success:
-                do {
-                    let storyBoard = UIStoryboard(name: "Followers", bundle: nil)
-                    let vc = storyBoard.instantiateViewController(identifier: "FollowersViewController") as! FollowersViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                     
-                } catch {}
-            case .failure(let error):
-                print("\(error.localizedDescription)")
-            }
-        }
+        
+        let storyBoard = UIStoryboard(name: "Followers", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "FollowersViewController") as! FollowersViewController
+        vc.userName = usernameTextField.text ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
-    
-
 }
+
+

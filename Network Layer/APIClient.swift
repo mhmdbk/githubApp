@@ -7,66 +7,80 @@
 //
 
 import Foundation
-import Moya
+import Alamofire
 
 class APIClient : NSObject {
-static let shared = APIClient()
-let provider = MoyaProvider<AppNetworkService>()
-   
-    func AlamoFireGetUser(userName: String, completionHandler : @escaping (Result<User?,Error>) -> ()) {
-    
-            AF.request("\(url)/profile/get",
-                method: .get,
-                parameters: nil,
-                headers:nil,
-                interceptor: nil)
-                .validate()
-                .responseJSON{(response) in
-                    switch response.result {
-                    case .success :
-                        if let jsonData = response.data {
-                            let user = try! JSONDecoder().decode(User.self, from: jsonData)
-                            completionHandler(.success(user))
-                        }
-                    case .failure :
-                        break
-//                        if let jsonData = response.data {
-//                            let error = try! JSONDecoder().decode(ApiErrorModel.self, from: jsonData)
-//                            completionHandler(.failure(error))
-//
-//                        }
+    static let shared = APIClient()
+    //let provider = MoyaProvider<AppNetworkService>()
+    let url = "https://api.github.com"
+    func getUser(userName: String, completionHandler : @escaping (Result<User,Error>) -> ()) {
+        
+        AF.request("\(url)/users/\(userName)",
+            method: .get,
+            parameters: nil,
+            headers: nil,
+            interceptor: nil)
+            .validate()
+            .responseJSON{(response) in
+                switch response.result {
+                case .success :
+                    if let jsonData = response.data {
+                        let user = try! JSONDecoder().decode(User.self, from: jsonData)
+                        completionHandler(.success(user))
                     }
-            }
-    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
         }
-    
-func getUser(completionHandler : @escaping (Result<User,Error>) -> ()) {
-    provider.request(.getUserInfo) { result in
-              switch result {
-              case let .success(moyaResponse):
-  
-                  let user = try! JSONDecoder().decode(User.self, from: moyaResponse.data)
-  
-                  completionHandler(.success(user))
-  
-              case .failure(let error):
-                print("\(String(describing: error.errorDescription))")
-                
-              }
-  
-          }
     }
+    //    provider.request(.getUserInfo) { result in
+    //              switch result {
+    //              case let .success(moyaResponse):
+    //
+    //                  let user = try! JSONDecoder().decode(User.self, from: moyaResponse.data)
+    //
+    //                  completionHandler(.success(user))
+    //
+    //              case .failure(let error):
+    //                print("\(String(describing: error.errorDescription))")
+    //
+    //              }
+    //
+    //          }
+    
 
-    func getFollowers(completionHandler : @escaping (Result<[Followers],Error>) -> ()) {
-        provider.request(.getFollowers) { result in
-            switch result {
-            case let .success(moyaResponse):
-                let followers = try! JSONDecoder().decode([Followers].self, from: moyaResponse.data)
-                completionHandler(.success(followers))
-            case .failure(let error):
-                print(error.errorDescription!)
-            }
-        }
-    }
-      }
+
+    func getFollowers(userName:String, completionHandler : @escaping (Result<[Followers],Error>) -> ()) {
+    
+    AF.request("\(url)/users/\(userName)/followers",
+             method: .get,
+             parameters: nil,
+             headers: nil,
+             interceptor: nil)
+             .validate()
+             .responseJSON{(response) in
+                 switch response.result {
+                 case .success :
+                     if let jsonData = response.data {
+                         let followers = try! JSONDecoder().decode([Followers].self, from: jsonData)
+                         completionHandler(.success(followers))
+                     }
+                 case .failure(let error):
+                     print(error.localizedDescription)
+                     
+                 }
+         }
+    //        provider.request(.getFollowers) { result in
+    //            switch result {
+    //            case let .success(moyaResponse):
+    //                let followers = try! JSONDecoder().decode([Followers].self, from: moyaResponse.data)
+    //                completionHandler(.success(followers))
+    //            case .failure(let error):
+    //                print(error.errorDescription!)
+    //            }
+    //        }
+}
+
+}
 
