@@ -115,7 +115,7 @@ extension FollowersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filtered = followers.filter { $0.login!.range(of: searchText, options: .caseInsensitive) != nil }
-        if(filtered.count == 0){
+        if searchBar.text!.isEmpty {
             searchActive = false;
         } else {
             searchActive = true;
