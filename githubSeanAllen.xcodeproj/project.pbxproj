@@ -11,6 +11,7 @@
 		500A099B23C756AD009282BD /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A099A23C756AD009282BD /* PurpleButton.swift */; };
 		500A099D23C8D45A009282BD /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A099C23C8D45A009282BD /* SpinnerViewController.swift */; };
 		500A09A123C8DC0B009282BD /* extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A09A023C8DC0B009282BD /* extension + UIViewController.swift */; };
+		500A09A423C928CF009282BD /* githubSeanAllen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 500A09A223C928CF009282BD /* githubSeanAllen.xcdatamodeld */; };
 		500EF53623C639AF003D48CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EF53523C639AF003D48CF /* User.swift */; };
 		500EF53823C650BF003D48CF /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EF53723C650BF003D48CF /* Followers.swift */; };
 		50C5DD0723C3F2B100B5FC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD0623C3F2B100B5FC23 /* AppDelegate.swift */; };
@@ -25,7 +26,6 @@
 		50C5DD2A23C4C72300B5FC23 /* FollowersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C5DD2823C4C72300B5FC23 /* FollowersCollectionViewCell.xib */; };
 		50C5DD2C23C4C73D00B5FC23 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD2B23C4C73D00B5FC23 /* FollowersViewController.swift */; };
 		50C5DD3223C4E64D00B5FC23 /* FollowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD3123C4E64D00B5FC23 /* FollowerDetailsViewController.swift */; };
-		50C5DD3523C4E67B00B5FC23 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C5DD3423C4E67B00B5FC23 /* Favorites.storyboard */; };
 		50C5DD3723C4E68800B5FC23 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD3623C4E68800B5FC23 /* FavoritesViewController.swift */; };
 		50C5DD3A23C4E69B00B5FC23 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5DD3823C4E69B00B5FC23 /* FavoritesTableViewCell.swift */; };
 		50C5DD3B23C4E69B00B5FC23 /* FavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C5DD3923C4E69B00B5FC23 /* FavoritesTableViewCell.xib */; };
@@ -41,6 +41,7 @@
 		500A099A23C756AD009282BD /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		500A099C23C8D45A009282BD /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		500A09A023C8DC0B009282BD /* extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + UIViewController.swift"; sourceTree = "<group>"; };
+		500A09A323C928CF009282BD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		500EF53523C639AF003D48CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		500EF53723C650BF003D48CF /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		50C5DD0323C3F2B100B5FC23 /* githubSeanAllen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubSeanAllen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +58,6 @@
 		50C5DD2823C4C72300B5FC23 /* FollowersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersCollectionViewCell.xib; sourceTree = "<group>"; };
 		50C5DD2B23C4C73D00B5FC23 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		50C5DD3123C4E64D00B5FC23 /* FollowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsViewController.swift; sourceTree = "<group>"; };
-		50C5DD3423C4E67B00B5FC23 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		50C5DD3623C4E68800B5FC23 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		50C5DD3823C4E69B00B5FC23 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		50C5DD3923C4E69B00B5FC23 /* FavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTableViewCell.xib; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 				50C5DD0423C3F2B100B5FC23 /* Products */,
 				99A44FD7FDB36A5B3A5FEFA0 /* Pods */,
 				C63E0E07C7EAC5584CDCB28E /* Frameworks */,
+				500A09A223C928CF009282BD /* githubSeanAllen.xcdatamodeld */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,7 +183,6 @@
 		50C5DD3323C4E65A00B5FC23 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				50C5DD3423C4E67B00B5FC23 /* Favorites.storyboard */,
 				50C5DD3623C4E68800B5FC23 /* FavoritesViewController.swift */,
 				50C5DD3823C4E69B00B5FC23 /* FavoritesTableViewCell.swift */,
 				50C5DD3923C4E69B00B5FC23 /* FavoritesTableViewCell.xib */,
@@ -290,7 +290,6 @@
 				50C5DD3B23C4E69B00B5FC23 /* FavoritesTableViewCell.xib in Resources */,
 				50C5DD2623C4C6C900B5FC23 /* Followers.storyboard in Resources */,
 				50C5DD1323C3F2B200B5FC23 /* LaunchScreen.storyboard in Resources */,
-				50C5DD3523C4E67B00B5FC23 /* Favorites.storyboard in Resources */,
 				50C5DD1023C3F2B200B5FC23 /* Assets.xcassets in Resources */,
 				50C5DD0E23C3F2B100B5FC23 /* Main.storyboard in Resources */,
 			);
@@ -353,6 +352,7 @@
 				50C5DD3723C4E68800B5FC23 /* FavoritesViewController.swift in Sources */,
 				50C5DD2223C4A57200B5FC23 /* GreenButton.swift in Sources */,
 				50C5DD2923C4C72300B5FC23 /* FollowersCollectionViewCell.swift in Sources */,
+				500A09A423C928CF009282BD /* githubSeanAllen.xcdatamodeld in Sources */,
 				500EF53823C650BF003D48CF /* Followers.swift in Sources */,
 				50C5DD3223C4E64D00B5FC23 /* FollowerDetailsViewController.swift in Sources */,
 				500A09A123C8DC0B009282BD /* extension + UIViewController.swift in Sources */,
@@ -558,6 +558,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		500A09A223C928CF009282BD /* githubSeanAllen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				500A09A323C928CF009282BD /* Model.xcdatamodel */,
+			);
+			currentVersion = 500A09A323C928CF009282BD /* Model.xcdatamodel */;
+			path = githubSeanAllen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50C5DCFB23C3F2B100B5FC23 /* Project object */;
 }

@@ -86,14 +86,29 @@
         <!--favorites-->
         <scene sceneID="JMK-U7-b66">
             <objects>
-                <viewController id="P7T-Ae-KnD" sceneMemberID="viewController">
+                <viewController id="P7T-Ae-KnD" customClass="FavoritesViewController" customModule="githubSeanAllen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wz7-ss-g5x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qx-Hg-znP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xpB-aX-F2n" firstAttribute="bottom" secondItem="1qx-Hg-znP" secondAttribute="bottom" id="BYT-lJ-JuQ"/>
+                            <constraint firstItem="1qx-Hg-znP" firstAttribute="leading" secondItem="xpB-aX-F2n" secondAttribute="leading" id="Jv8-bw-rL1"/>
+                            <constraint firstItem="1qx-Hg-znP" firstAttribute="top" secondItem="xpB-aX-F2n" secondAttribute="top" id="d1W-Iv-IgA"/>
+                            <constraint firstItem="xpB-aX-F2n" firstAttribute="trailing" secondItem="1qx-Hg-znP" secondAttribute="trailing" id="gJp-E1-e0e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xpB-aX-F2n"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="favorites" image="star" catalog="system" selectedImage="star" id="I3I-aq-qx5"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="1qx-Hg-znP" id="bzF-o6-02A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIz-53-u0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

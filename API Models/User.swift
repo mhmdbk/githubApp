@@ -8,38 +8,39 @@
  
 
 import Foundation
+
 struct User : Codable {
-    let login : String?
-    let id : Int?
-    let nodeId : String?
-    let avatarUrl : String?
-    let gravatarId : String?
-    let url : String?
-    let htmlUrl : String?
-    let followersUrl : String?
-    let followingUrl : String?
-    let gistsUrl : String?
-    let starredUrl : String?
-    let subscriptionsUrl : String?
-    let organizationsUrl : String?
-    let reposUrl : String?
-    let eventsUrl : String?
-    let receivedEventsUrl : String?
-    let type : String?
-    let siteAdmin : Bool?
-    let name : String?
-    let company : String?
-    let blog : String?
-    let location : String?
-    let email : String?
-    let hireable : String?
-    let bio : String?
-    let publicRepos : Int?
-    let publicGists : Int?
-    let followers : Int?
-    let following : Int?
-    let createdAt : String?
-    let updatedAt : String?
+    var login : String?
+    var id : Int?
+    var nodeId : String?
+    var avatarUrl : String?
+    var gravatarId : String?
+    var url : String?
+    var htmlUrl : String?
+    var followersUrl : String?
+    var followingUrl : String?
+    var gistsUrl : String?
+    var starredUrl : String?
+    var subscriptionsUrl : String?
+    var organizationsUrl : String?
+    var reposUrl : String?
+    var eventsUrl : String?
+    var receivedEventsUrl : String?
+    var type : String?
+    var siteAdmin : Bool?
+    var name : String?
+    var company : String?
+    var blog : String?
+    var location : String?
+    var email : String?
+    var hireable : String?
+    var bio : String?
+    var publicRepos : Int?
+    var publicGists : Int?
+    var followers : Int?
+    var following : Int?
+    var createdAt : String?
+    var updatedAt : String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -76,5 +77,8 @@ struct User : Codable {
         case updatedAt = "updated_at"
     }
 
+    init() {
+        
+    }
     
 }

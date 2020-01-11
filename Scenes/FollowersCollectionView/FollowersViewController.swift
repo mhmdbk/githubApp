@@ -24,11 +24,11 @@ class FollowersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showSpinner(onView: self.view)
         initialSetups()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.showSpinner(onView: self.view)
         getFollowers()
     }
     func initialSetups(){

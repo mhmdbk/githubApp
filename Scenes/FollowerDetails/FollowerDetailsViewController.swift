@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import CoreData
 
 class FollowerDetailsViewController: UIViewController {
     var userName: String = "mojombo"
@@ -26,13 +27,12 @@ class FollowerDetailsViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addTapped))
         getUser()
-        
+        self.showSpinner(onView: self.view)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.showSpinner(onView: self.view)
     }
        func getUser() {
             APIClient.shared.getUser(userName:userName) { (result) in
@@ -73,5 +73,19 @@ class FollowerDetailsViewController: UIViewController {
     }
     
     @objc func addTapped(sender: UIBarButtonItem) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let userEntity = NSEntityDescription.entity(forEntityName: "SingleUser", in:managedContext)!
+        let user1 = NSManagedObject(entity: userEntity, insertInto: managedContext)
+        user1.setValue("\(String(describing: user.login!))", forKey: "login")
+        user1.setValue("\(String(describing: user.avatarUrl!))", forKey: "avatar_url")
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("could not save. \(error), \(error.userInfo)")
+        }
+        
     }
+    
+
 }
