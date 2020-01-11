@@ -9,7 +9,7 @@
 import UIKit
 import  CoreData
 class FavoritesViewController: UIViewController {
-
+    
     @IBOutlet weak var favoritesTableView: UITableView!
     
     var favoriteUsers = [User]()
@@ -17,8 +17,8 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+        
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
         let  FavoriteTableViewCellNib = UINib(nibName: "FavoritesTableViewCell", bundle: .main)
@@ -53,11 +53,33 @@ class FavoritesViewController: UIViewController {
             print("Failed")
         }
     }
-   
+    
     
 }
 
 extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            favoriteUsers.remove(at: indexPath.row)
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SingleUser")
+            do {
+                let test = try managedContext.fetch(fetchRequest)
+                let objectToDelete = test[indexPath.row] as! NSManagedObject
+                managedContext.delete(objectToDelete)
+                try managedContext.save()
+            } catch {
+                print(error)
+            }
+            favoritesTableView.reloadData()
+        }
+        
+    }
     
 }
 extension FavoritesViewController: UITableViewDataSource {
@@ -68,27 +90,14 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesTableViewCell", for: indexPath) as! FavoritesTableViewCell
         let currentItem = favoriteUsers[indexPath.row]
-                    cell.favoriteNameLabel.text = currentItem.login
+        cell.favoriteNameLabel.text = currentItem.login
         cell.favoriteImageView.sd_setImage(with: URL(string: currentItem.avatarUrl!))
-
+        
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SingleUser")
-        do {
-            let test = try managedContext.fetch(fetchRequest)
-            let objectToDelete = test[indexPath.row] as! NSManagedObject
-            managedContext.delete(objectToDelete)
-            try managedContext.save()
-        } catch {
-            print(error)
-        }
-        favoriteUsers.remove(at: indexPath.row)
-        favoritesTableView.reloadData()
-    }
+    
+    
+    
     
     
 }

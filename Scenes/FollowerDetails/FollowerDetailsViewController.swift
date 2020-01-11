@@ -85,6 +85,9 @@ class FollowerDetailsViewController: UIViewController {
             print("could not save. \(error), \(error.userInfo)")
         }
         
+        let alert = UIAlertController(title: "Profile", message: "\(String(describing: user.login!)) added to favorites", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 
